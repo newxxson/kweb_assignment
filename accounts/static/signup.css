@@ -1,0 +1,12 @@
+#form-container p {
+  font-size: 16px;
+  padding: 5px;
+}
+
+#form-container label {
+  color: blue;
+}
+
+#form-container input {
+  width: 100%;
+}

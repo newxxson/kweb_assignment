@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+<!--  -->
+{% block header %}
+<!--  -->
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'list_post.css' %}" />
+{% endblock %}
+<!--  -->
+{% block content %}
+<h1 id="course-name">{{ course.course_name }}</h1>
+<p id="course-description">{{ course.description }}</p>
+{% if user.role == "professor" %}
+<a id="create-post-button" href="/show-create-post/{{ course.id }}/"
+  >Create Post</a
+>
+<a id="list-students-button" href="/list-enrolled-students/{{ course.id }}/"
+  >List Enrolled Students</a
+>
+{% endif %}
+
+<ul id="post-list">
+  {% for post in posts %}
+  <li class="post-item">
+    <a href="/show-post/{{ post.id }}/" class="post-title">{{ post.title }}</a>
+    {% if user.role == "professor" %}
+    <a href="/edit-post/{{ post.id }}/" class="edit-button">Edit</a>
+    <a href="/delete-post/{{ post.id }}/" class="delete-button">Delete</a>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

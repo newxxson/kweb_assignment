@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+<!--  -->
+{% block header %}
+<!--  -->
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'show_post.css' %}" />
+{% endblock %}
+<!--  -->
+{% block content %}
+<h1 id="post-title">{{ post.title }}</h1>
+<p id="post-content">{{ post.content }}</p>
+
+{% if user == post.course.professor %}
+<a id="edit-button" href="/edit-post/{{ post.id }}/">Edit</a>
+<a id="delete-button" href="/delete-post/{{ post.id }}/">Delete</a>
+{% endif %}
+
+<a id="go-back-button" href="/list-post/{{ post.course.id }}/">Go Back</a>
+{% endblock %}

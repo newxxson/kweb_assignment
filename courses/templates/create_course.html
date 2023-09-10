@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+<!--  -->
+{% block header %}
+<!--  -->
+{% load static %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'create_course.css' %}"
+/>
+{% endblock %}
+<!--  -->
+{% block content %}
+<h1>Create Course</h1>
+<form id="create-course-form" method="post">
+  {% csrf_token %}
+  <label for="course_name" class="course-label">Course Name:</label>
+  <input
+    type="text"
+    id="course_name"
+    name="course_name"
+    class="course-input"
+    required
+  /><br />
+
+  <label for="description" class="course-label">Description:</label>
+  <textarea
+    id="description"
+    name="description"
+    class="course-textarea"
+    required
+  ></textarea
+  ><br />
+
+  <button type="submit" class="course-button">Create Course</button>
+</form>
+<a href="/list-courses/" class="go-back-button">Go Back</a>
+{% endblock %}

@@ -1,0 +1,15 @@
+.error-container {
+  text-align: center;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+}
+
+.error-container h1 {
+  font-size: 36px;
+  color: red;
+}
+
+.error-container p {
+  font-size: 18px;
+  color: black;
+}

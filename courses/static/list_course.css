@@ -1,0 +1,25 @@
+.course-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.course-item {
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.course-name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.course-description {
+  margin: 10px 0;
+  font-size: 1em;
+}
+
+.action-button {
+  padding: 5px 15px;
+  margin: 5px;
+}

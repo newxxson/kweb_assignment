@@ -1,0 +1,56 @@
+#course-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#course-description {
+  margin-bottom: 20px;
+}
+
+#post-list {
+  list-style-type: none;
+}
+
+.post-item {
+  margin-bottom: 10px;
+}
+
+.post-title {
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+  padding: 5px;
+  border: black solid 1px;
+}
+
+.edit-button,
+.delete-button {
+  margin-left: 20px;
+  background-color: #ccc;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.edit-button {
+  background-color: #f39c12;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+}
+
+#create-post-button,
+#list-students-button {
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 10px;
+  background-color: #28a745; /* Green */
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+#create-post-button:hover,
+#list-students-button:hover {
+  background-color: #218838; /* Darker green */
+}

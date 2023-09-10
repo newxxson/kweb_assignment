@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+<!--  -->
+{% block header %}
+<!--  -->
+{% load static %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'list_enrolled_students.css' %}"
+/>
+{% endblock %}
+<!--  -->
+{% block content %}
+<h1>Enrolled Students</h1>
+<table id="student-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Student ID</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for student in students %}
+    <tr>
+      <td>{{ student.name }}</td>
+      <td>{{ student.student_id }}</td>
+      <td>
+        <a
+          href="/kick-student/{{ course.id }}/{{ student.student_id }}/"
+          class="kick-button"
+          >Kick Student</a
+        >
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<a href="/list-post/{{ course.id }}/" class="go-back-button">Go Back</a>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+<!--  -->
+{% block header %}
+<!--  -->
+{% load static %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'list_all_post.css' %}"
+/>
+{% endblock %}
+<!--  -->
+{% block content %}
+<h1>All Posts</h1>
+<ul id="post-list">
+  {% for post in posts %}
+  <li class="post-item">
+    <a href="/list_post/{{ post.course.id }}/" class="course-link"
+      >{{ post.course.course_name }}</a
+    >
+    &raquo;
+    <a href="/show_post/{{ post.id }}/" class="post-title">{{ post.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
+<a href="/list-courses/" class="go-back-button">Go Back</a>
+{% endblock %}

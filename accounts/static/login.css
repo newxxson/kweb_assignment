@@ -1,0 +1,29 @@
+/* login.css */
+form {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+input[type="text"],
+input[type="password"] {
+  padding: 5px;
+  margin: 5px 0;
+}
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 20px;
+}

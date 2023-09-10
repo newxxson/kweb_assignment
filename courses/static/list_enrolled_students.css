@@ -1,0 +1,44 @@
+#student-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#student-table th,
+#student-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#student-table th {
+  background-color: #f2f2f2;
+}
+
+.kick-button {
+  background-color: #e74c3c; /* Red */
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.kick-button:hover {
+  background-color: #c0392b; /* Darker red */
+}
+
+.go-back-button {
+  display: block;
+  margin-top: 20px;
+  background-color: #007bff; /* Blue */
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.go-back-button:hover {
+  background-color: #0056b3; /* Darker blue */
+}

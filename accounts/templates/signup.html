@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+<!--  -->
+{% block header %}
+<!--  -->
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'signup.css' %}" />
+{% endblock %}
+<!--  -->
+{% block content %}
+<h1>Signup</h1>
+<form method="post">
+  {% csrf_token %}
+  <div id="form-container">{{ form.as_p }}</div>
+  <button type="submit">Signup</button>
+</form>
+{% if form.errors %} {% for field, errors in form.errors.items %}
+<p>{{ field }}: {{ errors|join:", " }}</p>
+{% endfor %} {% endif %} {% endblock %}

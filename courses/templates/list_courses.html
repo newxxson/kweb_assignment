@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+<!--  -->
+{% block header %}
+<!--  -->
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'list_course.css' %}" />
+{% endblock %}
+<!--  -->
+{% block content %}
+<h1>Courses</h1>
+<ul id="course-list" class="course-list">
+  {% for course in courses %}
+  <li class="course-item">
+    <span class="course-name">{{ course.course_name }}</span>
+    <p class="course-description">{{ course.description }}</p>
+    {% if user.role == "professor" %}
+    <!--  -->
+    {% if user == course.professor %}
+    <a class="action-button" href="/list-post/{{ course.id }}/"
+      >Manage Course</a
+    >
+    {% endif %}
+    <!--  -->
+    {% elif user.role == "student" %}
+    <!--  -->
+    {% if course in enrolled_courses %}
+    <a class="action-button" href="/list-post/{{ course.id }}/">View Coures</a>
+    {% else %}
+    <a class="action-button" href="/enroll/{{ course.id }}/">Enroll</a>
+    {% endif %}
+    <!--  -->
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

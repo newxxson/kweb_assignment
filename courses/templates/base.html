@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    {% block header %}{% endblock %}
+    <title>kweb assignment</title>
+    <style>
+      /* base.css content here */
+      header {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+      }
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav ul li {
+        display: inline;
+        margin-right: 20px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+
+          {% if user.role == "professor" %}
+          <li><a href="/create-course/">Create Course</a></li>
+          <li><a href="/list-courses/only/">My course</a></li>
+          {% elif user.role == "student" %}
+          <li><a href="/list-courses/only/">My Courses</a></li>
+          <li><a href="/list-all-post/">All posts</a></li>
+          {% endif %}
+          <li><a href="/list-courses/show-all/">All courses</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>{% block content %} {% endblock %}</main>
+  </body>
+</html>

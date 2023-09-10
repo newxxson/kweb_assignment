@@ -1,0 +1,45 @@
+#post-list {
+  list-style-type: none;
+}
+
+.post-item {
+  margin-bottom: 10px;
+}
+
+.course-link {
+  font-weight: bold;
+  color: #007bff; /* Blue */
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.course-link:hover {
+  text-decoration: underline;
+}
+
+.post-title {
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  margin-left: 10px;
+  border: black solid 1px;
+}
+
+.post-title:hover {
+  text-decoration: underline;
+}
+
+.go-back-button {
+  display: block;
+  margin-top: 20px;
+  background-color: #007bff; /* Blue */
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.go-back-button:hover {
+  background-color: #0056b3; /* Darker blue */
+}

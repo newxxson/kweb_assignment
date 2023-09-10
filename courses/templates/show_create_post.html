@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+<!--  -->
+{% block header %}
+<!--  -->
+{% load static %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'show_create_post.css' %}"
+/>
+{% endblock %}
+<!--  -->
+{% block content %}
+<h1>Create Post for {{ course.name }}</h1>
+<p>Description: {{ course.description }}</p>
+
+<form
+  id="create-post-form"
+  method="post"
+  action="/create-post/{{ course.id }}/"
+>
+  {% csrf_token %}
+  <label for="title" class="post-label">Title:</label>
+  <input
+    type="text"
+    id="title"
+    name="title"
+    class="post-input"
+    required
+  /><br />
+
+  <label for="content" class="post-label">Content:</label>
+  <textarea
+    id="content"
+    name="content"
+    class="post-textarea"
+    required
+  ></textarea
+  ><br />
+
+  <button type="submit" class="post-button">Create Post</button>
+</form>
+<a href="/list-post/{{ course.id }}/" class="go-back-button">Go Back</a>
+{% endblock %}
